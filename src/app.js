@@ -10,7 +10,7 @@ import './styles.css';
 function App({store}) {
 
   const list = store.getState().list;
-
+  
   return (
     <div className='App'>
       <div className='App-head'>
@@ -27,6 +27,7 @@ function App({store}) {
                    onClick={() => store.selectItem(item.code)}>
                 <div className='Item-code'>{item.code}</div>
                 <div className='Item-title'>{item.title}</div>
+                <div className='Item-count'>{item.counter > 0 ? `${item.counter} раз` : ''}</div>
                 <div className='Item-actions'>
                   <button onClick={() => store.deleteItem(item.code)}>
                     Удалить
